@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Time Control Platformer - SUPERHOT Style</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <canvas id="gameCanvas" width="900" height="550"></canvas>
+        
+        <!-- Interface do Jogo -->
+        <div class="ui-panel">
+            <div class="ui-left">
+                <div class="stat-card">
+                    <div class="stat-label">⏱️ TEMPO</div>
+                    <div class="stat-value" id="timeValue">0.00</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">🎯 FASE</div>
+                    <div class="stat-value" id="levelValue">1</div>
+                </div>
+            </div>
+            <div class="ui-center">
+                <div class="time-status" id="timeStatus">
+                    <span class="status-dot frozen"></span>
+                    CONGELADO
+                </div>
+            </div>
+            <div class="ui-right">
+                <div class="stat-card">
+                    <div class="stat-label">💀 INIMIGOS</div>
+                    <div class="stat-value" id="enemiesCount">0</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">🏆 RECORDE</div>
+                    <div class="stat-value" id="highScore">0.00</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Barra de Tempo Visual -->
+        <div class="time-bar-container">
+            <div class="time-bar" id="timeBar"></div>
+        </div>
+        
+        <!-- Controles Mobile -->
+        <div class="mobile-controls hidden" id="mobileControls">
+            <button class="ctrl-btn" id="btnLeft">◀</button>
+            <button class="ctrl-btn" id="btnRight">▶</button>
+            <button class="ctrl-btn" id="btnJump">▲</button>
+            <button class="ctrl-btn" id="btnDash">⚡</button>
+        </div>
+        
+        <!-- Tela de Game Over -->
+        <div id="gameOverlay" class="game-overlay hidden">
+            <div class="overlay-card">
+                <h2>💀 TIME STOPPED 💀</h2>
+                <p>Você foi atingido!</p>
+                <div class="final-stats">
+                    <p>Tempo sobrevivido: <span id="finalTime">0.00</span>s</p>
+                    <p>Fase alcançada: <span id="finalLevel">1</span></p>
+                </div>
+                <button id="restartButton" class="action-btn">⟳ REINICIAR</button>
+            </div>
+        </div>
+        
+        <!-- Instruções -->
+        <div class="instructions">
+            <span>← →</span> Mover • <span>↑</span> Pular • <span>Shift</span> Dash • O tempo só avança quando você se move!
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
